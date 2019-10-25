@@ -10,6 +10,8 @@
 
 ## Install 'docker-compose' on 'Debian'.
 
+    #!/usr/bin/env bash
+
     export URL="https://github.com/docker/compose/releases/download"
 
     sudo curl -L "${URL}/1.24.1/docker-compose-$(uname -s)-$(uname -m)" \
@@ -18,7 +20,9 @@
     sudo chmod +x /usr/local/bin/docker-compose
 
 
-## The listed scripts are for fish shell.
+## Startup scripts for fish shell.
+
+    #!/usr/bin/env fish
 
     docker rm -f (docker ps -aq)
 
