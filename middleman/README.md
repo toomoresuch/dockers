@@ -1,11 +1,21 @@
-# a Dockerfile for '[Middleman](https://middlemanapp.com/)'.
+# for '[Middleman](https://middlemanapp.com/)'.
 
-## VARIABLE
+## VARIABLEs
 
 - DockerHUB => ruby:2.6.5 (debian buster)
-- PORT => 80
-- VOLUME => /tmp/share
-- WORKDIR => /tmp
+- PORT      => 4567:80
+- WORKDIR   => /tmp
+- VOLUME    => /tmp/share
+
+
+## Install 'docker-compose' on 'Debian'.
+
+    export URL="https://github.com/docker/compose/releases/download"
+
+    sudo curl -L "${URL}/1.24.1/docker-compose-$(uname -s)-$(uname -m)" \
+        -o /usr/local/bin/docker-compose
+
+    sudo chmod +x /usr/local/bin/docker-compose
 
 
 ## The listed scripts are for fish shell.
@@ -15,10 +25,6 @@
     # [! ATTENTION !]
     docker rmi -f (docker images -q)
 
-    docker build -t docker-middleman .
+    docker-compose build
 
-    docker run -it \
-        -p <PORT, YOU WANT TO MOUNT>:80 \
-        -v /<DIRECTORY, YOU WANT TO MOUNT>:/tmp/share \
-        docker-middleman \
-        /bin/bash middleman.sh
+    export VOLUME=<DIRECTORY, YOU WANT TO MOUNT> && docker-compose up

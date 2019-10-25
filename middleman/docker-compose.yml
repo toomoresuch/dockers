@@ -1,0 +1,18 @@
+version: '3'
+
+services:
+
+  middleman:
+    image: docker-middleman
+    container_name: dev-middleman
+    build: .
+
+    tty: true
+
+    ports:
+      - 4567:80
+
+    volumes:
+      - "${VOLUME}:/tmp/share"
+
+    command: bash -c "cd /tmp/share && rm Gemfile.lock && bundle update && bundle exec middleman -p 80"
