@@ -16,4 +16,8 @@ RUN gem install bundler
 
 WORKDIR /tmp
 ADD Gemfile Gemfile
+ADD middleman.sh middleman.sh
+
+RUN chmod 444 /tmp/Gemfile
+RUN chmod 755 /tmp/middleman.sh
 RUN bundle install
