@@ -21,3 +21,6 @@ ADD middleman.sh middleman.sh
 RUN chmod 444 /tmp/Gemfile
 RUN chmod 755 /tmp/middleman.sh
 RUN bundle install
+
+RUN echo 'alias server="cd /tmp/share && bundle exec middleman -p 80"' >> ~/.bashrc
+RUN echo 'alias build="cd /tmp/share && bundle exec middleman build --verbose || bundle exec middleman build --verbose"' >> ~/.bashrc
