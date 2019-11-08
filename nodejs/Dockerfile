@@ -1,6 +1,6 @@
 FROM node:12.13.0
 
-MAINTAINER toomore_such <info@webgent.com>
+LABEL maintainer="toomore_such <info@webgent.com>"
 
 ENV LANG C.UTF-8
 

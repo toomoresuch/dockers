@@ -1,6 +1,6 @@
 FROM ruby:2.6.5
 
-MAINTAINER toomore_such <info@webgent.com>
+LABEL maintainer="toomore_such <info@webgent.com>"
 
 ENV LANG C.UTF-8
 ENV DEBCONF_NOWARNINGS yes
