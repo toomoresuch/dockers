@@ -1,0 +1,16 @@
+version: '3'
+
+services:
+
+  nodejs:
+    image: docker-nodejs
+    container_name: dev-nodejs
+    build: .
+
+    tty: true
+
+    ports:
+      - 4567:80
+
+    volumes:
+      - "${VOLUME}:/tmp/share"

@@ -2,9 +2,12 @@
 
 ## VARIABLEs
 
-- DockerHUB => node:12.13.0 (debian stretch)
+- DockerHUB => node:12.14.0 (debian buster)
+- PORT      => 4567:80
 - WORKDIR   => /tmp
+- VOLUME    => /tmp/share
 
+## Startup scripts for fish shell.
 
 ## Startup scripts for fish shell.
 
@@ -15,6 +18,15 @@
     # [! ATTENTION !]
     docker rmi -f (docker images -q)
 
-    docker build -t docker-nodejs .
+    docker-compose build
 
-    docker run -it -v /<DIRECTORY, YOU WANT TO MOUNT>:/tmp/share docker-nodejs /bin/bash
+    export VOLUME=<DIRECTORY, YOU WANT TO MOUNT>
+
+    # For local server only.
+    docker-compose up
+
+    # For local server or build.
+    docker-compose run --service-ports nodejs /bin/bash
+
+    # After loggging into 'docker-nodejs' container.
+    root@[0-9a-z]{12}:/tmp/share# gatsby develop -p 80 -H 0.0.0.0
