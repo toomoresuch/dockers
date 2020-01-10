@@ -14,10 +14,13 @@ rm -rf /var/lib/apt/lists/*
 
 # EJS
 RUN npm install -g --unsafe-perm=true --no-optional \
+elm \
+elm-format \
+elm-live \
+elm-test \
 ejs-cli \
 html-minify && \
 npm cache clean --force
-# elm elm-format elm-live elm-test
 
 # GATSBY
 RUN npm install -g --unsafe-perm=true gatsby-cli && \

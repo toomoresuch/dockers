@@ -9,8 +9,6 @@
 
 ## Startup scripts for fish shell.
 
-## Startup scripts for fish shell.
-
     #!/usr/bin/env fish
 
     docker rm -f (docker ps -aq)
