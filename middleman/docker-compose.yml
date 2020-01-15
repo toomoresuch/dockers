@@ -15,4 +15,5 @@ services:
     volumes:
       - "${VOLUME}:/tmp/share"
 
-    command: sh -c "/tmp/middleman.sh"
+    command: /bin/bash
+    # sh -c "/tmp/middleman.sh"
