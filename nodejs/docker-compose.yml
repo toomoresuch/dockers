@@ -14,3 +14,5 @@ services:
 
     volumes:
       - "${VOLUME}:/tmp/share"
+
+    command: /bin/bash
