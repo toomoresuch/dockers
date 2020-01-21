@@ -12,7 +12,7 @@ apt-get install -y libgl1-mesa-glx && \
 apt-get clean && \
 rm -rf /var/lib/apt/lists/*
 
-# EJS
+# ELM & EJS
 RUN npm install -g --unsafe-perm=true --no-optional \
 elm \
 elm-format \
