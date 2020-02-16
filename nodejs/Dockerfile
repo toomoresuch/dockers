@@ -14,16 +14,28 @@ rm -rf /var/lib/apt/lists/*
 
 # ELM & EJS
 RUN npm install -g --unsafe-perm=true --no-optional \
-elm \
-elm-format \
-elm-live \
-elm-test \
 ejs-cli \
-html-minify && \
-npm cache clean --force
+html-minify
+
+# NCU & IMAGEMIN
+RUN npm install -g --unsafe-perm=true \
+npm-check-updates \
+imagemin-cli \
+imagemin-gifsicle \
+imagemin-keep-folder \
+imagemin-mozjpeg \
+imagemin-pngquant
+
+# ELM
+# RUN npm install -g --unsafe-perm=true \
+# elm \
+# elm-format \
+# elm-live \
+# elm-test \
 
 # GATSBY
-RUN npm install -g --unsafe-perm=true gatsby-cli && \
+RUN npm install -g --unsafe-perm=true \
+gatsby-cli && \
 npm cache clean --force
 RUN gatsby telemetry --disable
 
