@@ -42,4 +42,4 @@ RUN gatsby telemetry --disable
 WORKDIR /tmp
 
 RUN echo 'alias npmls="npm list --depth=0 -g"' >> ~/.bashrc
-RUN echo 'alias gs="gatsby develop -p 80 --host 0.0.0.0"' >> ~/.bashrc
+RUN echo 'alias gs="cd /tmp/share && gatsby clean && gatsby develop -p 80 --host 0.0.0.0"' >> ~/.bashrc

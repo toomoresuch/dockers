@@ -28,3 +28,7 @@
 
     # After loggging into 'docker-nodejs' container.
     root@[0-9a-z]{12}:/tmp/share# gatsby develop -p 80 -H 0.0.0.0
+
+## Startup an one-liner script for fish shell.
+
+    export VOLUME=(pwd) && docker-compose -f /<DIR>/docker-compose.yml run --service-ports nodejs /bin/bash && docker rm (docker ps -aq) -f
