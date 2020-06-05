@@ -43,6 +43,6 @@ WORKDIR /tmp
 
 RUN echo 'alias nl="npm list --depth=0"' >> ~/.bashrc
 RUN echo 'alias nlg="npm list --depth=0 -g"' >> ~/.bashrc
-RUN echo 'alias gs="cd /tmp/share && gatsby develop -p 80 --host 0.0.0.0"' >> ~/.bashrc
-RUN echo 'alias gcs="cd /tmp/share && gatsby clean && gatsby develop -p 80 --host 0.0.0.0"' >> ~/.bashrc
-RUN echo 'alias gb="cd /tmp/share && gatsby clean && gatsby build"' >> ~/.bashrc
+RUN echo 'alias gs="cd /tmp/share && ncu && gatsby develop -p 80 --host 0.0.0.0"' >> ~/.bashrc
+RUN echo 'alias gcs="cd /tmp/share && ncu && gatsby clean && gatsby develop -p 80 --host 0.0.0.0"' >> ~/.bashrc
+RUN echo 'alias gb="cd /tmp/share && ncu && gatsby clean && gatsby build"' >> ~/.bashrc
