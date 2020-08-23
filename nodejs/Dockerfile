@@ -1,4 +1,4 @@
-FROM node:12.18.2
+FROM node:12.18.3
 
 LABEL maintainer="toomore_such <info@webgent.com>"
 
@@ -43,6 +43,9 @@ WORKDIR /tmp
 
 RUN echo 'alias nl="npm list --depth=0"' >> ~/.bashrc
 RUN echo 'alias nlg="npm list --depth=0 -g"' >> ~/.bashrc
-RUN echo 'alias gs="cd /tmp/share && ncu && gatsby develop -p 80 --host 0.0.0.0"' >> ~/.bashrc
-RUN echo 'alias gcs="cd /tmp/share && ncu && gatsby clean && gatsby develop -p 80 --host 0.0.0.0"' >> ~/.bashrc
+
+RUN echo 'alias gs="cd /tmp/share && gatsby develop -p 80 --host 0.0.0.0"' >> ~/.bashrc
+RUN echo 'alias gus="cd /tmp/share && ncu && gatsby develop -p 80 --host 0.0.0.0"' >> ~/.bashrc
+RUN echo 'alias gucs="cd /tmp/share && ncu && gatsby clean && gatsby develop -p 80 --host 0.0.0.0"' >> ~/.bashrc
+
 RUN echo 'alias gb="cd /tmp/share && ncu && gatsby clean && gatsby build"' >> ~/.bashrc
